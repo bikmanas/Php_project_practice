@@ -35,7 +35,13 @@
             <td>{{ $better->name }}</td>
             <td>{{ $better->surname }}</td>
             <td>{{ $better->bet }}</td>
-            <td>{{$better->horse_id}} </td>
+
+            @foreach ($horses as $horse)
+                @if($horse->id == $better->horse_id)
+                    <td>{{ $horse->name }} </td>
+                @endif
+            @endforeach
+
             <td>
                 <form action={{ route('betters.destroy', $better->id) }} method="POST">
                     <a class="btn btn-success" href={{ route('betters.edit', $better->id) }}>Edit</a>
@@ -44,7 +50,7 @@
                 </form>
             </td>
         </tr>
-        @endforeach
+@endforeach
 
     </table>
     <div>
