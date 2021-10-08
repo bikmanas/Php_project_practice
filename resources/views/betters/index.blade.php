@@ -35,7 +35,6 @@
             <td>{{ $better->name }}</td>
             <td>{{ $better->surname }}</td>
             <td>{{ $better->bet }}</td>
-//Issue with Horse name representation! Need to adjust. Receiving an error with 'trying to get property "name" of non-object'
             <td>{{$better->horse_id}} </td>
             <td>
                 <form action={{ route('betters.destroy', $better->id) }} method="POST">
